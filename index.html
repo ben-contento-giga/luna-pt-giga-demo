@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna | In-Home Physical Therapy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath d='M18 2a16 16 0 1 0 0 32V27a11 11 0 1 1 0-22Z' fill='%23D5B8E4'/%3E%3Cpath d='M18 2a16 16 0 0 1 0 32V27a11 11 0 0 0 0-22Z' fill='%23974EBC'/%3E%3C/svg%3E">
+<style>
+:root{
+  --luna-purple:#974EBC;
+  --luna-purple-dark:#713B8D;
+  --luna-purple-light:#D5B8E4;
+  --luna-teal:#1FBFD7;
+  --luna-text:#212B36;
+  --luna-muted:#637381;
+  --luna-bg:#F9FAFB;
+  --luna-bg-purple:#F9F3FD;
+  --luna-line:#DFE3E8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  background:#fff;
+  color:var(--luna-text);
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+
+.topbar{
+  background:var(--luna-purple-dark);color:#fff;text-align:center;
+  font-size:0.8rem;padding:0.5rem 1rem;letter-spacing:0.01em;
+}
+.topbar strong{color:var(--luna-teal);}
+
+header{
+  padding:1.1rem 2.5rem;
+  display:flex;align-items:center;gap:2rem;
+  border-bottom:1px solid var(--luna-line);
+  flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;flex-shrink:0;}
+.logo svg{height:26px;width:auto;}
+.searchbar{
+  flex:1;min-width:220px;display:flex;align-items:center;
+  background:var(--luna-bg);border-radius:6px;padding:0.15rem;
+  max-width:560px;border:1px solid var(--luna-line);
+}
+.searchbar input{
+  flex:1;border:none;background:transparent;outline:none;
+  font-size:0.92rem;padding:0.65rem 0.9rem;color:var(--luna-text);
+}
+.searchbar .go{
+  background:var(--luna-purple);color:#fff;border-radius:5px;
+  width:2.3rem;height:2.3rem;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-right:0.15rem;
+}
+.header-icons{display:flex;gap:1.75rem;flex-shrink:0;}
+.header-icons a{
+  display:flex;flex-direction:column;align-items:center;gap:0.2rem;
+  color:var(--luna-purple);font-size:0.72rem;font-weight:700;position:relative;
+}
+.header-icons .ic{font-size:1.2rem;}
+
+nav.mainnav{
+  background:var(--luna-purple);
+  display:flex;justify-content:center;gap:2.1rem;
+  padding:0.75rem 1rem;flex-wrap:wrap;
+}
+nav.mainnav a{color:#fff;font-size:0.88rem;font-weight:700;letter-spacing:0.01em;}
+nav.mainnav a:hover{color:var(--luna-teal);}
+nav.mainnav a.cta{color:var(--luna-teal);}
+
+.hero{
+  position:relative;background:linear-gradient(120deg,var(--luna-purple-dark),var(--luna-purple));
+  padding:3.5rem 2.5rem;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+}
+.hero-copy{max-width:540px;}
+.hero-copy .eyebrow{color:var(--luna-teal);font-weight:800;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;margin-bottom:0.8rem;}
+.hero-copy h1{font-size:2.5rem;font-weight:800;line-height:1.15;margin-bottom:1rem;}
+.hero-copy p{color:#EADCF2;font-size:1.05rem;margin-bottom:1.5rem;}
+.btn-teal{
+  display:inline-block;background:var(--luna-teal);color:#fff;font-weight:800;
+  padding:0.85rem 1.9rem;border-radius:6px;font-size:0.92rem;border:none;cursor:pointer;
+}
+.btn-teal:hover{background:#1a9fb3;}
+.hero-art{
+  width:320px;height:230px;border-radius:12px;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:4rem;flex-shrink:0;
+  box-shadow:0 16px 40px rgba(78,40,97,0.35);
+}
+
+.trust-strip{
+  background:var(--luna-bg-purple);color:var(--luna-purple-dark);text-align:center;
+  padding:0.85rem 1rem;font-weight:800;font-size:0.95rem;letter-spacing:0.01em;
+}
+
+main{max-width:1180px;margin:0 auto;padding:3.5rem 2.5rem;}
+.section-title{text-align:center;font-size:1.8rem;font-weight:800;color:var(--luna-purple-dark);margin-bottom:0.4rem;}
+.section-sub{text-align:center;color:var(--luna-muted);margin-bottom:2.25rem;font-size:0.95rem;}
+
+.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.1rem;margin-bottom:3.5rem;}
+.room-card{
+  background:var(--luna-bg-purple);border:1px solid var(--luna-line);border-radius:12px;
+  padding:1.75rem 1rem;text-align:center;transition:transform 0.15s,box-shadow 0.15s;
+}
+.room-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(151,78,188,0.14);}
+.room-card .emoji{font-size:2.4rem;margin-bottom:0.7rem;}
+.room-card .name{font-size:0.92rem;font-weight:700;color:var(--luna-purple-dark);}
+
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:1rem;}
+.promo-card{border-radius:14px;overflow:hidden;position:relative;height:220px;display:flex;align-items:flex-end;
+  background:linear-gradient(0deg,rgba(78,40,97,0.82),rgba(78,40,97,0) 60%),var(--luna-bg-purple);
+  background-size:cover;}
+.promo-card .inner{padding:1.4rem;color:#fff;}
+.promo-card h3{font-size:1.2rem;font-weight:800;margin-bottom:0.3rem;}
+.promo-card p{font-size:0.85rem;color:#EADCF2;margin-bottom:0.8rem;}
+.promo-card .emoji-bg{position:absolute;top:1rem;right:1rem;font-size:3rem;opacity:0.85;}
+
+.trust-cards{
+  display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;
+  background:var(--luna-bg-purple);border:1px solid var(--luna-line);border-radius:14px;
+  padding:1.75rem;margin-bottom:3.5rem;
+}
+.trust-item{text-align:center;max-width:160px;}
+.trust-item .ic{font-size:1.8rem;margin-bottom:0.4rem;}
+.trust-item .label{font-size:0.82rem;font-weight:700;color:var(--luna-purple-dark);}
+.trust-item .sub{font-size:0.75rem;color:var(--luna-muted);}
+
+footer{background:var(--luna-purple-dark);color:#EADCF2;padding:2.5rem 2.5rem;}
+.footer-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.footer-col h4{color:#fff;font-size:0.82rem;margin-bottom:0.8rem;letter-spacing:0.03em;}
+.footer-col a{display:block;color:#EADCF2;font-size:0.85rem;margin-bottom:0.5rem;}
+.footer-col a:hover{color:var(--luna-teal);}
+.footer-bottom{text-align:center;color:#C195D7;font-size:0.8rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.25rem;}
+
+[id*="gigaml"],[class*="gigaml"],[id*="giga-widget"],[class*="giga-widget"]{
+  position:fixed!important;right:0!important;bottom:0!important;z-index:2147483647!important;zoom:1.0;
+}
+</style>
+<script>
+window.CHAT_WIDGET_CONFIG = {
+  agent_template_id: 'agent_template_515c4b63-b7fb-4429-bccf-2ba7759bfc0c',
+  company_name: 'Luna',
+  primary_color: '#974EBC',
+  primary_text_color: '#ffffff',
+  secondary_color: 'rgb(245 245 245)',
+  secondary_text_color: '#000000',
+  tagline: 'Chat with us about your care.',
+  icon_url: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 36 36\'%3E%3Cpath d=\'M18 2a16 16 0 1 0 0 32V27a11 11 0 1 1 0-22Z\' fill=\'%23D5B8E4\'/%3E%3Cpath d=\'M18 2a16 16 0 0 1 0 32V27a11 11 0 0 0 0-22Z\' fill=\'%23974EBC\'/%3E%3C/svg%3E',
+  position: "bottom-right"
+};
+</script>
+<script defer src="https://widget.gigaml.com/inject-gigaml.js"></script>
+</head>
+<body>
+
+<div class="topbar">In-home physical therapy, covered by Medicare &amp; major insurance &middot; <strong>No prescription required to start</strong></div>
+
+<header>
+  <div class="logo">
+    <svg width="123" height="35" viewBox="0 0 123 35" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M17.208776,0.274995 C26.697298,0.274995 34.416646,7.985145 34.416646,17.462445 C34.416646,26.940095 26.697298,34.649895 17.208776,34.649895 L17.208776,29.737645 C23.984288,29.737645 29.49606,24.231795 29.49606,17.464895 C29.49606,10.697995 23.984288,5.192845 17.208776,5.192845 L17.208776,0.274995 Z" fill="#D5B8E4"></path>
+        <path d="M17.208716,0.274995 L17.208716,5.192845 C10.433554,5.192845 4.921332,10.697995 4.921332,17.464895 C4.921332,24.231795 10.433554,29.737645 17.208716,29.737645 L17.208716,34.649895 C7.719844,34.649895 0.00028,26.940095 0.00028,17.462445 C0.00028,7.985145 7.719844,0.274995 17.208716,0.274995" fill="#974EBC"></path>
+        <path d="M47.793420,5.28311 L44.259360,5.28311 L44.259360,29.77156 L60.158599,29.77156 L60.158599,26.80811 C60.158599,26.14206 59.615086,25.59921 58.948223,25.59921 L49.005197,25.59921 L49.005197,6.49341 C49.005197,5.82596 48.461685,5.28311 47.793420,5.28311" fill="#974EBC"></path>
+        <path d="M76.421372,29.77149 L79.493919,29.77149 L79.493919,11.81369 L76.156799,11.81369 C75.483979,11.81369 74.938013,12.35934 74.938013,13.03134 L74.938013,23.59364 L74.899816,23.64264 C74.469492,24.19109 72.880654,25.97749 70.485133,25.97749 C69.809509,25.97749 68.535705,25.82279 67.589902,24.78399 C66.912876,24.01679 66.637090,23.07459 66.637090,21.52969 L66.637090,11.81369 L63.262124,11.81369 C62.610680,11.81369 62.081534,12.34254 62.081534,12.99214 L62.081534,21.33999 C62.081534,23.87189 62.657286,25.75524 63.894295,27.26934 C65.352073,29.07289 67.632303,30.14949 69.993833,30.14949 C71.831825,30.14949 73.504064,29.52544 74.828329,28.34454 L75.127944,28.07609 L75.127944,28.47824 C75.127944,29.19084 75.707902,29.77149 76.421372,29.77149" fill="#974EBC"></path>
+        <path d="M98.459958,29.77149 L101.808291,29.77149 L101.808291,20.62179 C101.808291,17.74024 101.254967,15.85514 99.960138,14.31759 C98.430172,12.48569 96.165710,11.43569 93.745309,11.43569 C91.866317,11.43569 90.161839,12.04469 88.679881,13.24624 L88.385873,13.48529 L88.385873,11.81369 L85.198035,11.81369 C84.547992,11.81369 84.018497,12.34254 84.018497,12.99214 L84.018497,28.55664 C84.018497,29.22584 84.564813,29.77149 85.234830,29.77149 L88.574403,29.77149 L88.574403,17.99749 L88.608394,17.94989 C89.190804,17.13999 90.904744,15.60769 93.215813,15.60769 C94.384138,15.60769 95.410189,15.98884 96.103685,16.68044 C96.908967,17.48579 97.252386,18.55259 97.252386,20.24519 L97.252386,28.56539 C97.252386,29.23004 97.794146,29.77149 98.459958,29.77149" fill="#974EBC"></path>
+        <path d="M118.354680,23.58769 L118.322441,23.63424 C117.301997,25.10179 115.591911,25.97749 113.751017,25.97749 C110.888376,25.97749 108.730795,23.75639 108.730795,20.81149 C108.730795,17.84559 110.840795,15.60769 113.637205,15.60769 C115.495171,15.60769 117.200701,16.46099 118.318214,17.94674 L118.354658,17.99469 L118.354680,23.58769 Z M119.838039,29.77149 L122.910586,29.77149 L122.910586,11.81369 L119.771077,11.81369 C119.093701,11.81369 118.543530,12.36354 118.543530,13.03939 L118.543530,13.48669 L118.249521,13.24624 C116.795949,12.06114 114.978632,11.43569 112.994162,11.43569 C108.048932,11.43569 104.175658,15.55449 104.175658,20.81149 C104.175658,23.16314 104.993205,25.40139 106.476914,27.11324 C108.112359,29.01514 110.648402,30.14949 113.259086,30.14949 C115.154547,30.14949 116.833795,29.54084 118.247043,28.34034 L118.543855,28.08869 L118.543855,28.47824 C118.543855,29.19084 119.125214,29.77149 119.838039,29.77149 Z" fill="#974EBC"></path>
+      </g>
+    </svg>
+  </div>
+  <div class="searchbar">
+    <input type="text" placeholder="Search conditions, insurance, locations...">
+    <div class="go">🔍</div>
+  </div>
+  <div class="header-icons">
+    <a href="#trust"><span class="ic">🩺</span>How It Works</a>
+    <a href="#"><span class="ic">👤</span>Patient Portal</a>
+    <a href="#"><span class="ic">📅</span>Book Visit</a>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <a href="#care">Conditions We Treat</a>
+  <a href="#">For Physicians</a>
+  <a href="#">Insurance &amp; Coverage</a>
+  <a href="#">Locations</a>
+  <a href="#">Careers</a>
+  <a href="#" class="cta">New Patient? Start Here</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">1:1 In-Home Physical Therapy</div>
+    <h1>Recover at home, on your schedule.</h1>
+    <p>Licensed physical therapists come to you for uninterrupted, one-on-one care — covered by Medicare and major insurance, no prescription required to start.</p>
+    <button class="btn-teal">Check Availability</button>
+  </div>
+  <div class="hero-art">🏡</div>
+</section>
+
+<div class="trust-strip">APPOINTMENTS AVAILABLE 7 DAYS A WEEK, 6:30AM – 9:30PM</div>
+
+<main>
+  <h2 class="section-title" id="care">Conditions We Treat</h2>
+  <p class="section-sub">Personalized care plans for every stage of recovery</p>
+  <div class="room-grid">
+    <div class="room-card"><div class="emoji">🦵</div><div class="name">Joint Replacement</div></div>
+    <div class="room-card"><div class="emoji">🦴</div><div class="name">Orthopedic Injury</div></div>
+    <div class="room-card"><div class="emoji">🧠</div><div class="name">Neurological Rehab</div></div>
+    <div class="room-card"><div class="emoji">🧓</div><div class="name">Balance &amp; Fall Prevention</div></div>
+    <div class="room-card"><div class="emoji">💪</div><div class="name">Post-Surgical Recovery</div></div>
+    <div class="room-card"><div class="emoji">🏃</div><div class="name">Sports Injury</div></div>
+    <div class="room-card"><div class="emoji">🦶</div><div class="name">Chronic Pain</div></div>
+    <div class="room-card"><div class="emoji">👶</div><div class="name">Pediatric Therapy</div></div>
+  </div>
+
+  <h2 class="section-title">Why Patients Choose Luna</h2>
+  <p class="section-sub">Care built around your home, not a waiting room</p>
+  <div class="promo-grid">
+    <div class="promo-card">
+      <div class="emoji-bg">🏡</div>
+      <div class="inner">
+        <h3>We Come to You</h3>
+        <p>Full 1:1 sessions in the comfort of your home</p>
+      </div>
+    </div>
+    <div class="promo-card">
+      <div class="emoji-bg">🩺</div>
+      <div class="inner">
+        <h3>No Prescription Needed</h3>
+        <p>Direct Access lets most patients start right away</p>
+      </div>
+    </div>
+    <div class="promo-card">
+      <div class="emoji-bg">💳</div>
+      <div class="inner">
+        <h3>Covered by Insurance</h3>
+        <p>Medicare and major plans accepted — we confirm costs at booking</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-cards" id="trust">
+    <div class="trust-item"><div class="ic">🏡</div><div class="label">1:1 In-Home Visits</div><div class="sub">45-55 min, uninterrupted</div></div>
+    <div class="trust-item"><div class="ic">🩺</div><div class="label">Licensed Therapists</div><div class="sub">Local, credentialed PTs</div></div>
+    <div class="trust-item"><div class="ic">💳</div><div class="label">Medicare &amp; Insurance</div><div class="sub">Costs confirmed at booking</div></div>
+    <div class="trust-item"><div class="ic">💬</div><div class="label">Real Help, Anytime</div><div class="sub">Chat with us right now</div></div>
+  </div>
+</main>
+
+<div style="max-width:1180px;margin:0 auto 3.5rem;padding:0 2.5rem;">
+  <div style="background:var(--luna-bg-purple);border:1px solid var(--luna-line);border-radius:14px;padding:2rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;">
+    <div>
+      <h3 style="color:var(--luna-purple-dark);font-size:1.15rem;margin-bottom:0.4rem;">Ready to get started, or need to adjust a visit?</h3>
+      <p style="color:var(--luna-muted);font-size:0.9rem;">Chat with us any time using the icon in the corner — we can register a new patient, confirm insurance, or reschedule an upcoming appointment.</p>
+    </div>
+    <button class="btn-teal" style="background:var(--luna-purple);">Talk to Luna</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>CARE</h4>
+      <a href="#">Conditions We Treat</a><a href="#">How It Works</a><a href="#">For Physicians</a><a href="#">Locations</a>
+    </div>
+    <div class="footer-col">
+      <h4>PATIENTS</h4>
+      <a href="#">New Patient Registration</a><a href="#">Insurance &amp; Coverage</a><a href="#">Patient Portal</a>
+    </div>
+    <div class="footer-col">
+      <h4>COMPANY</h4>
+      <a href="#">About Luna</a><a href="#">Careers</a><a href="#">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>HELP</h4>
+      <a href="#">Book a Visit</a><a href="#">Reschedule</a><a href="#">FAQs</a>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; Luna. Demo site with Giga chat — not affiliated with getluna.com.</div>
+</footer>
+
+</body>
+</html>
